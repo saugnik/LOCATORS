@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locators - Your Population Data Analytics Service</title>
+    <link rel="stylesheet" href="CSS.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCnUSrVYEonSxn0cjkpTVbljpRSh9exIc&callback=initMap" async defer></script>
+    <style>
+        #map {
+            height: 500px;  /* Adjust height as needed */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <img src="LocatorsLogo.png" alt="Locators Logo" class="logo" loading="lazy">
+        <h1><b>LOCATORS</b></h1>
+        <nav role="navigation">
+            <a href="#home">Home</a>
+            <a href="#register">Register</a>
+            <a href="#profile">Profile</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#map">Map</a>
+            <a href="#feedback">Feedback</a>
+        </nav>
+        <div class="login-form">
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </header>
+    <main id="home" role="main">
+        <section id="register">
+            <h2>User Registration</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        <section id="profile">
+            <h2>User Profile</h2>
+            <div id="userProfile"></div>
+            <img src="static/user_placeholder.png" alt="User Avatar" id="userAvatar" loading="lazy">
+        </section>
+        <section id="analytics">
+            <h2>Advanced Population Data Analytics</h2>
+            <form id="locationForm">
+                <label for="area">Enter Area Name:</label>
+                <input type="text" id="area" required>
+                <button type="submit">Get Data</button>
+            </form>
+            <div id="population"></div>
+            <section class="population-chart">
+                <h2>Population Over Time</h2>
+                <canvas id="populationChart"></canvas>
+            </section>
+        </section>
+        <section id="map">
+            <h2>Maps</h2>
+            <div id="map"></div>
+        </section>
+        <section id="feedback">
+            <h2>User Feedback and Support</h2>
+            <form id="feedbackForm">
+                <textarea id="feedbackMessage" placeholder="Your feedback..." rows="5" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; 2024 Locators</p>
+        <div class="social-media">
+            <a href="#"><img src="static/facebook_icon.png" alt="Facebook" class="social-icon" loading="lazy"></a>
+            <a href="#"><img src="static/twitter_icon.png" alt="Twitter" class="social-icon" loading="lazy"></a>
+            <a href="#"><img src="static/linkedin_icon.png" alt="LinkedIn" class="social-icon" loading="lazy"></a>
+        </div>    
+    </footer>
+    <script src="JAVASCRIPT.js"></script>
+    <script src="server.js"></script>
+    <script>
+        function initMap() {
+            const mapOptions = {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            };
+            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your login functionality here
+            alert('Login functionality not implemented.');
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your registration functionality here
+            alert('Registration functionality not implemented.');
+        });
+
+        document.getElementById('locationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your analytics data retrieval functionality here
+            alert('Analytics data retrieval functionality not implemented.');
+        });
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your feedback submission functionality here
+            alert('Feedback submission functionality not implemented.');
+        });
+    </script>
+</body>
+</html>
